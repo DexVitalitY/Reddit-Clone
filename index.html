@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Reddit Clone</title>
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+      <!-- Angular JS File -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+      
+      <!-- Reddit Clone JS -->    
+    <script src="app.js"></script>
+
+
+  </head>
+
+  <body ng-app="redditNews" ng-controller="MainCtrl">
+    <div ng-repeat="post in posts | orderBy: '-upvotes'">
+      <span class="glyphicon glyphicon-thumbs-up"
+        ng-click="incrementUpVotes(post)">
+      </span>
+
+      <a ng-show="post.link" href="{{post.link}}">
+        {{post.title}}
+      </a>
+
+      <span ng-hide="post.link">
+        {{post.title}}
+      </span>
+
+      - # of Upvotes: {{post.upvotes}}
+      
+
+      <form ng-submit="addPost()">
+        <input type="text" ng-model="title" placeholder="Title Here..."></input>
+        <input type="text" ng-model="link" placeholder="Link Here..."></input>
+        <button type="submit">Add Post</button>
+      </form>
+    </div>
+
+
+
+    <p> THIS IS NOT ANGULAR </p>
+      
+  </body>
+</html>
