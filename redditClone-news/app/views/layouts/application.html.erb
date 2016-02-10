@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedditCloneNews</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="redditNews">
+    <div class="row">
+    
+      <div class="col-xs-8 col-xs-offset-2">
+        <ui-view>
+          <i>Content Will Be Loaded Here.......</i>
+        </ui-view>
+
+      </div>
+
+    </div>
+</body>
+</html>
